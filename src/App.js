@@ -6,22 +6,24 @@ import EditMe from "./components/EditMe";
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
-  // Agregar usuarios
+
+  // Agregar Usuarios por defecto
   const usersData = [
-    { id: uuidv4(), name: "Tania", username: "floppydiskette" },
-    { id: uuidv4(), name: "Craig", username: "siliconeidolon" },
-    { id: uuidv4(), name: "Ben", username: "benisphere" },
+    { id: uuidv4(), name: "Pepe", username: "xxxPePexxx" },
+    { id: uuidv4(), name: "Coscu", username: "Anashe" },
+    { id: uuidv4(), name: "Ben", username: "Tenes el Omnitrix" },
   ];
 
   const [users, setUsers] = useState(usersData);
 
+  /*Agregar Usuarios con ID Random*/
   const addUser = (user) => {
     user.id = uuidv4();
     console.log(user);
     setUsers([...users, user]);
   };
 
-  // Eliminar usuario
+  // Eliminar Usuario con filter
   const deleteUser = (id) => {
     setUsers(users.filter((user) => user.id !== id));
   };

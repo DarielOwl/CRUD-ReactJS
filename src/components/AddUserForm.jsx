@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 
 const AddUserForm = (props) => {
 
-    //const {register, errors, handleSubmit} = useForm();
+    //En react-hook-form version 7xxx hay que utilizar asi:
     const {register, handleSubmit, formState: {errors}} = useForm()
 
     const onSubmit = (data, e) => {
@@ -19,6 +19,7 @@ const AddUserForm = (props) => {
             <label>Name</label>
                 <input 
                     type="text" 
+                    //En react-hook-form version 7xxx hay que utilizar asi:
                     {...register("name", {required: {value: true, message: 'Campo obligatorio'}})}
                 />
             <div>
